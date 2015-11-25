@@ -1,0 +1,50 @@
+EXERCISE 1
+
+mysql> use decodemtl_addressbook
+Database changed
+
+mysql> create table Account (id int auto_increment primary key, email varchar(255), password varchar(40), createdOn datetime, modifiedOn datetime);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> create table AddressBook (id int auto_increment primary key, accountId int, name varchar(255), createdOn datetime, modifiedOn datetime);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> create table Entry (id int auto_increment primary key, addressBookId int, firstName varchar(255), lastName varchar(255), birthday datetime, type enum("phone","address","electronic-mail"));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Address (id int auto_increment primary key, entryId int, type enum('home','work','other'), addressLine1 varchar(255), addressLine2 varchar(255), city varchar(255), province varchar(128), country varchar(128), postalCode varchar(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table ElectronicMail (id int auto_increment primary key, entryId int, type enum('home','work','other'), content varchar(255));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Phone (id int auto_increment primary key, entryId int, type enum('home','work','other'), subtype enum('landline','cellular','fax'), content varchar(255));
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> show tables;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| Address                         |
+| AddressBook                     |
+| ElectronicMail                  |
+| Entry                           |
+| Phone                           |
++---------------------------------+
+6 rows in set (0.00 sec)
+
+
+mysql> describe Entry;
++---------------+-------------------------------------------+------+-----+---------+----------------+
+| Field         | Type                                      | Null | Key | Default | Extra          |
++---------------+-------------------------------------------+------+-----+---------+----------------+
+| id            | int(11)                                   | NO   | PRI | NULL    | auto_increment |
+| addressBookId | int(11)                                   | YES  |     | NULL    |                |
+| firstName     | varchar(255)                              | YES  |     | NULL    |                |
+| lastName      | varchar(255)                              | YES  |     | NULL    |                |
+| birthday      | datetime                                  | YES  |     | NULL    |                |
+| type          | enum('phone','address','electronic-mail') | YES  |     | NULL    |                |
++---------------+-------------------------------------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
