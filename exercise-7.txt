@@ -1,0 +1,5 @@
+EXERCISE 7
+
+mysql> SELECT SUBSTRING(content, locate('@', content) +1) AS Domains
+    -> FROM ElectronicMail
+    -> GROUP BY Domains;
