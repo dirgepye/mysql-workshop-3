@@ -1,0 +1,7 @@
+EXERCISE 10
+
+
+mysql> select firstName, lastName, birthday
+    -> from Entry
+    -> where HOUR(birthday) between 20 and 21
+    -> and MONTH(birthday) not like 02;
