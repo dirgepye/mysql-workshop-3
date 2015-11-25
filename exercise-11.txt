@@ -1,0 +1,70 @@
+EXERCISE 11
+
+mysql> SELECT city, country
+    -> FROM Address 
+    -> WHERE country
+    -> IN ('Canada','Austria','Isle of Man','Ireland','Japan') 
+    -> ORDER BY country DESC;
++----------------+-------------+
+| city           | country     |
++----------------+-------------+
+| Berlin         | Japan       |
+| ?slahiye       | Japan       |
+| Houston        | Japan       |
+| Pontevedra     | Japan       |
+| Bozeman        | Japan       |
+| Rzeszów        | Japan       |
+| Milena         | Japan       |
+| Abbeville      | Japan       |
+| Bremerhaven    | Isle of Man |
+| Kailua         | Isle of Man |
+| Ogbomosho      | Isle of Man |
+| Chartres       | Isle of Man |
+| Denderbelle    | Isle of Man |
+| San Vicente    | Isle of Man |
+| Horsham        | Isle of Man |
+| Ceyhan         | Isle of Man |
+| Dover          | Isle of Man |
+| Belfast        | Isle of Man |
+| Pabianice      | Isle of Man |
+| Nagaon         | Isle of Man |
+| Meridian       | Ireland     |
+| Raj Nandgaon   | Ireland     |
+| Terneuzen      | Ireland     |
+| Kraków         | Ireland     |
+| Chestermere    | Ireland     |
+| Lasnigo        | Ireland     |
+| Belfast        | Ireland     |
+| Galway         | Ireland     |
+| Cagnes-sur-Mer | Ireland     |
+| Cartago        | Ireland     |
+| Jackson        | Ireland     |
+| Assen          | Ireland     |
+| Calmar         | Canada      |
+| Mabompr?       | Canada      |
+| Quesada        | Canada      |
+| Pietraroja     | Canada      |
+| San Francisco  | Canada      |
+| Moulins        | Canada      |
+| Springfield    | Canada      |
+| Anápolis       | Canada      |
+| Hillsboro      | Canada      |
+| Rollegem       | Canada      |
+| Tirrases       | Canada      |
+| Angers         | Canada      |
+| Cork           | Canada      |
+| Satara         | Canada      |
+| Baulers        | Canada      |
+| Ceyhan         | Austria     |
+| Zwickau        | Austria     |
+| Vienna         | Austria     |
+| Tauranga       | Austria     |
+| Dubbo          | Austria     |
+| Hamburg        | Austria     |
+| Siedlce        | Austria     |
+| Shimla         | Austria     |
+| Bodmin         | Austria     |
+| Edmundston     | Austria     |
+| Alness         | Austria     |
++----------------+-------------+
+58 rows in set (0.00 sec)
