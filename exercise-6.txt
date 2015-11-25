@@ -1,2 +1,21 @@
 EXERCISE 6
 
+
+
+List all of the phone numbers for Jenkins, Charlotte
+
+mysql> SELECT Phone.content,
+    -> Phone.type,
+    -> CONCAT(Entry.lastName,', ',Entry.firstName) as Name
+    -> FROM Phone
+    -> JOIN Entry
+    -> ON Entry.id = Phone.entryId
+    -> WHERE firstName = "Charlotte"
+    -> AND lastName = "Jenkins";
++----------------+-------+--------------------+
+| content        | type  | Name               |
++----------------+-------+--------------------+
+| (110) 167-3420 | other | Jenkins, Charlotte |
+| (605) 175-1334 | home  | Jenkins, Charlotte |
++----------------+-------+--------------------+
+2 rows in set (0.00 sec)
