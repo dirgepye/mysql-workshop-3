@@ -1,0 +1,16 @@
+EXERCISE 8
+
+mysql> SELECT COUNT(subtype), subtype
+    -> FROM Phone
+    -> JOIN Entry
+    -> ON Phone.entryId = Entry.id 
+    -> WHERE birthday BETWEEN '1950-10-01 00:00:00' and '1960-10-01 00:00:00'
+    -> GROUP BY subtype;
++----------------+----------+
+| COUNT(subtype) | subtype  |
++----------------+----------+
+|            170 | landline |
+|            138 | cellular |
+|            134 | fax      |
++----------------+----------+
+3 rows in set (0.00 sec)
